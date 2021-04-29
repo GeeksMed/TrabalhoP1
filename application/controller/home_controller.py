@@ -68,6 +68,13 @@ estadoDAO = EstadoDAO(estado_lista)
 def index():
     return render_template("index.html", estado_list = estadoDAO.get_estadoLista())
 
+@app.route('/<sigla>')
+def estado(sigla):
+    for estado in estado_lista:
+        if estado.get_sigla() == sigla:
+            return render_template("estado.html", estado = estado)
+    return render_template("index.html", estado_list = estado_lista)
+
 @app.route('/<titulo>')
 def noticia(titulo):
     for noticia in noticia_lista:

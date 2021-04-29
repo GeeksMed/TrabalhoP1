@@ -12,7 +12,7 @@
                     <div class="infoUserPost">
                         <div class="imgUserPost"><img class="imgEstado" src="{{url_for('static', filename=estado.get_imagem())}}"></button></div>
                         <div class="nameAndHour">
-                            <strong>{{estado.get_sigla()}} - {{estado.get_nome()}}</strong>
+                            <a href="{{ url_for('estado', sigla=estado.get_sigla())}}"><strong>{{estado.get_sigla()}} - {{estado.get_nome()}}</strong></a>
                         </div>
                     </div>
                     <ul>
