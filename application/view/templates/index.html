@@ -4,5 +4,36 @@
 {% endblock %}
 
 {% block content %}
-
+    {% for estado in estado_list %}
+        <main class="main">
+            <!--Formulario de Postagem-->
+            <ul class="posts">
+                <li class="post">
+                    <div class="infoUserPost">
+                        <div class="imgUserPost"><img class="imgEstado" src="{{url_for('static', filename=estado.get_imagem())}}"></button></div>
+                        <div class="nameAndHour">
+                            <strong>{{estado.get_sigla()}} - {{estado.get_nome()}}</strong>
+                        </div>
+                    </div>
+                    <ul>
+                        {% for noticia in estado.get_noticia_lista() %}
+                            <li class=noticiaLinkLi>
+								<a href="{{ url_for('noticia', titulo=noticia.get_titulo())}}">
+                                	<div class=noticiaLink>
+										<img class="imgNoticia" src="{{url_for('static', filename=estado.get_imagem())}}">
+										<div>
+											<h3>{{noticia.get_titulo()}}</h3>
+											<span>{{noticia.get_data_publicacao()}}</span>
+											<p>{{noticia.get_resumo()}}</p>
+										</div>
+									</div>
+									<span class=leiaMais>Leia mais</span>
+								</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            </ul>
+        </main>
+    {% endfor %}
 {% endblock %}

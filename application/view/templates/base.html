@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
+    <meta charset="UTF-8">
 	<title>{% block title %} {% endblock %}</title>
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}">
 </head>
 <body>
+    <header>
+        <h1><a href="{{ url_for('index')}}"><img class=imgBandeiraBrasil src="{{url_for('static', filename='/img/bbrasil.png')}}" alt="Brasil"><span class=tituloBase>Jonal Covid 19</span></a></h1>
+    </header>
 	{% block content %}
 	{% endblock %}
 </body>

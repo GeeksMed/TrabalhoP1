@@ -1,4 +1,4 @@
-from application.model.entity.estado import estado
+from application.model.entity.estado import Estado
 
 class EstadoDAO():
 

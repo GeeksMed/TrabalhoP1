@@ -1,30 +1,34 @@
+from datetime import datetime
+
 class Noticia():
-    __estado: Estado
     __titulo: str
+    __imagem: str
     __descricao: str
+    __resumo: str
     __qt_visualizacao: int
     __qt_curtidas: int
     __data_publicacao: str
 
-    def __init__(self, estado: Estado, titulo: str, descricao: str, qt_visualizacao: int, qt_curtidas: int, data_publicacao: str):
-        self.__estado = estado
+    def __init__(self, titulo: str, imagem: str, resumo: str, descricao: str, qt_visualizacao=0, qt_curtidas=0, data_publicacao=str(datetime.now())[0:19]):
         self.__titulo = titulo
+        self.__imagem = imagem
         self.__descricao = descricao
+        self.__resumo = resumo
         self.__qt_visualizacao = qt_visualizacao
         self.__qt_curtidas = qt_curtidas
         self.__data_publicacao = data_publicacao
-    
-    def get_estado(self):
-        return self.__estado
-
-    def get_estado_imagem(self):
-        return self.__estado.get_imagem()
         
     def get_titulo(self):
         return self.__titulo
+    
+    def get_imagem(self):
+        return self.__imagem
 
     def get_descricao(self):
         return self.__descricao
+
+    def get_resumo(self):
+        return self.__resumo
 
     def get_qt_visualizacao(self):
         return self.__qt_visualizacao
@@ -34,16 +38,19 @@ class Noticia():
 
     def get_data_publicacao(self):
         return self.__data_publicacao
-    
-    def set_estado(self, estado: Estado):
-        self.__estado = estado
         
     def set_titulo(self, titulo: str):
         self.__titulo = titulo
+    
+    def set_imagem(self, imagem: str):
+        self.__imagem = imagem
 
     def set_descricao(self, descricao: str):
         self.__descricao = descricao 
 
+    def set_resumo(self):
+        self.__resumo = resumo
+    
     def set_qt_visualizacao(self, qt_visualizacao: str):
         self.__qt_visualizacao = qt_visualizacao
 
