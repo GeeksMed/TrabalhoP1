@@ -1,6 +1,6 @@
 {% extends 'base.html'%}
 {% block title %}
-	Jonal Covid 19
+Jornal Covid 19
 {% endblock %}
 
 {% block content %}
@@ -17,7 +17,7 @@
                 <ul>
                     {% for noticia in estado.get_noticia_lista() %}
                         <li class=noticiaLinkLi>
-                            <a href="{{ url_for('noticia', titulo=noticia.get_titulo())}}">
+                            <a href="{{ url_for('noticia', id=noticia.get_id())}}">
                                 <div class=noticiaLink>
                                     <img class="imgNoticia" src="{{url_for('static', filename=estado.get_imagem())}}">
                                     <div>

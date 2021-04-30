@@ -1,6 +1,7 @@
 from datetime import datetime
 
 class Noticia():
+    __id: int
     __titulo: str
     __imagem: str
     __descricao: str
@@ -9,7 +10,8 @@ class Noticia():
     __qt_curtidas: int
     __data_publicacao: str
 
-    def __init__(self, titulo: str, imagem: str, resumo: str, descricao: str, qt_visualizacao=0, qt_curtidas=0, data_publicacao=str(datetime.now())[0:19]):
+    def __init__(self, id: int, titulo: str, imagem: str, resumo: str, descricao: str, qt_visualizacao=0, qt_curtidas=0, data_publicacao=str(datetime.now())[0:19]):
+        self.__id = id
         self.__titulo = titulo
         self.__imagem = imagem
         self.__descricao = descricao
@@ -18,6 +20,9 @@ class Noticia():
         self.__qt_curtidas = qt_curtidas
         self.__data_publicacao = data_publicacao
         
+    def get_id(self):
+        return self.__id
+
     def get_titulo(self):
         return self.__titulo
     
@@ -38,6 +43,9 @@ class Noticia():
 
     def get_data_publicacao(self):
         return self.__data_publicacao
+
+    def set_id(self, id: int):
+        self.__id = id
         
     def set_titulo(self, titulo: str):
         self.__titulo = titulo
